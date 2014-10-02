@@ -1,0 +1,40 @@
+<template name="step1">
+  {{> flashMessages}}
+  <div class="wrapper">
+    <div class="panel panel-success">
+      <div class="panel-heading">Datos personales (Paso 1 de 5)</div>
+      <div class="panel-body">
+        <form action="" role="form" method="post" class="form">
+          <div class="form-group">
+            <input type="text" name="nombres" id="nombres" class="form-control" placeholder="Nombre completo" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" required>
+          </div>
+          <div class="form-group">
+            <select id="pais" name="pais" required class="form-control">
+              <option value="">País</option>
+              <option value="pe">Perú</option>
+              <option value="mx">México</option>
+            </select>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="agree"> Acepto los <a href="#" data-toggle="modal" data-target="#terms">términos y condiciones</a>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Siguiente paso <i class="fa fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+      
+  </div>
+  <div class="wrapper">
+    <h3>Lo que opina la gente</h3>
+    <div class="iframe">
+      <iframe src="http://media.perunoticias.net/iframes/fb.php?url=http%3A%2F%2Fwww.saldogratis.biz%2F%3Fpage%3Dsaldo"></iframe>
+    </div>
+  </div>
+  {{>terms}}
+</template>
+

@@ -1,0 +1,27 @@
+<template name="step12">
+  {{> flashMessages}}
+  <div class="wrapper">
+    <div class="panel panel-success">
+      <div class="panel-heading">Escoge tus redes (Paso 2 de 5)</div>
+      <div class="panel-body">
+        <p>Escoge las Redes Sociales con las que cuentas:</p>
+        <div class="checkbox">
+          <h2>
+            <label>
+              <input type="checkbox" id="fb"> <i class="fa fa-facebook-square text-info"></i> Facebook
+            </label>
+            <label>
+              <input type="checkbox" id="gp"> <i class="fa fa-google-plus-square text-danger"></i> Google+
+            </label>
+          </h2>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <p><i class="fa fa-question-circle text-warning"></i> Recuerda que con <i class="fa fa-google-plus-square text-danger"></i> obtienes más que con <i class="fa fa-facebook-square text-info"></i>, y si escoges los dos obtienes muchísimo más. Es importante que estés logueado en las cuentas que escogiste antes de continuar.</p>
+      </div>
+    </div>
+    <p>
+      <button type="submit" class="btn btn-primary btn-block next">Siguiente paso <i class="fa fa-arrow-right"></i></button>
+    </p>
+  </div>
+</template>

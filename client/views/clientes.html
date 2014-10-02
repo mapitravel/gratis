@@ -1,0 +1,58 @@
+<template name="clientes">
+  {{>menu}}
+  <div class="page-header">
+    <h3>Todos los clientes
+    </h3>
+  </div>
+  {{> flashMessages}}
+  <table class="table table-striped table-hovered table-bordered">
+    <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Email</th>
+        <th>País</th>
+        <th>Ciudad</th>
+        <th>Operador</th>
+        <th>Celular</th>
+        <th>Estado</th>
+        <th>Redes</th>
+        <th colspan="3">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each clientes}}
+      <tr>
+        <td>{{nombres}}</td>
+        <td>{{email}}</td>
+        <td>{{pais}}</td>
+        <td>{{ciudad}}</td>
+        <td>{{operador}}</td>
+        <td>{{numero}}</td>
+        <td>
+          {{#if recarga}}Recargado{{else}}Sin recarga{{/if}}
+        </td>
+        <td>
+          {{redes}}
+        </td>
+        <td>
+          {{#if recarga}}
+          <span class="label label-warning">Ya está recargado</span>
+          {{else}}
+          <button class="btn btn-success btn-sm" title="Recargar" data-id="{{_id}}"><i class="fa fa-phone-square"></i></button>
+          {{/if}}
+        </td>
+        <td>
+          <a class="btn btn-warning btn-sm" title="Ver URLS" href="{{pathFor 'myurls'}}"><i class="fa fa-link"></i></a>
+        </td>
+        <td>
+          <button class="btn btn-info btn-sm" title="Borrar" data-id="{{_id}}"><i class="fa fa-times"></i></button>
+        </td>
+      </tr>
+      {{else}}
+      <tr>
+        <td colspan="9" class="text-center">No existen Clientes</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>

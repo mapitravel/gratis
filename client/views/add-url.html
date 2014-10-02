@@ -1,0 +1,23 @@
+<template name="addurl">
+  {{>menu}}
+  <div class="page-header">
+    <h3>Agregar URL
+      <span class="pull-right small">
+        <a href="{{pathFor 'urls'}}" class="btn btn-success btn-sm"><i class="fa fa-link"></i> Lista de URLS</a>
+      </span>
+    </h3>
+  </div>
+  {{> flashMessages}}
+  <form action="" method="post" class="form">
+    <div class="form-group">
+      <input type="url" class="form-control" id="url" name="url" placeholder="Ingresa la URL (Incluye el http)" autofocus required autocomplete="off">
+    </div>
+    <div class="form-group">
+      <textarea name="" id="comment" class="form-control" placeholder="Ingresa los comentarios para esta url, agregar más de un comentario separándolo con un salto de línea" rows="15" required></textarea>
+    </div>
+    <p class="text-center">
+      <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Guardar</button>
+      <button class="btn btn-warning other" type="button" accesskey="g"><i class="fa fa-save"></i> Guardar y agregar otro</button>
+    </p>
+  </form>
+</template>

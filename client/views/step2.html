@@ -1,0 +1,54 @@
+<template name="step2">
+  {{> flashMessages}}
+  {{> facebook}}
+  <div class="panel panel-success">
+    <div class="panel-heading">Llenar comentarios (Paso 3 de 5)</div>
+    <div class="panel-body">
+      {{#each urls}}
+        <div class="row myrow" data-id="{{_id}}">
+          <div class="well small">Escoge un <i class="fa fa-comment"></i> comentario de la izquierda y copialo en las cajas de la derecha, luego da click al boton <span class="label label-info">Comentar</span> y/o <span class="label label-default">Comentar</span> segun sea el caso, luego de haber comentado da click al boton <span class="label label-success"><i class="fa fa-check-circle"></i> Ya lo usé</span> al lado del comentario que escogiste, cuando termines podras seguir con el siguiente paso.</div>
+          <div class="col-md-6">
+            <table class="table table-striped table-hovered table-bordered">
+              <thead>
+                <tr>
+                  <th><i class="fa fa-comment"></i> Comentario</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each comments}}
+                  {{#if active}}
+                  <tr>
+                    <td class="small">
+                      {{comment}}
+                    </td>
+                    <td>
+                      {{#if active}}
+                      <button class="btn btn-success btn-sm" data-id="{{_id}}" data-parent="{{../_id}}"><i class="fa fa-check-circle"></i> Ya lo usé</button>
+                      {{/if}}
+                    </td>
+                  </tr>
+                  {{/if}}
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-6">
+            {{#if fb}}
+            <iframe src="http://media.perunoticias.net/iframes/fb.php?url={{url}}"></iframe>
+            {{/if}}
+            {{#if gp}}
+            <iframe src="http://media.perunoticias.net/iframes/gp.php?url={{url}}" class="iframe2"></iframe>
+            {{/if}}
+          </div>
+        </div>
+        <hr data-id="{{_id}}">
+      {{/each}}
+    </div>
+
+    <button type="button" class="btn btn-primary btn-block next" disabled>Siguiente paso <i class="fa fa-arrow-right"></i></button>
+    <input type="hidden" id="c" value="">
+  </div>
+  
+</template>
+

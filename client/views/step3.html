@@ -1,0 +1,31 @@
+<template name="step3">
+  {{> flashMessages}}
+  <div class="wrapper">
+    <div class="panel panel-success">
+      <div class="panel-heading">Datos del operador (Paso 4 de 5)</div>
+      <div class="panel-body">
+        <div class="well">Completa tus datos para la recarga.</div>
+        <form action="" role="form" method="post" class="form">
+          <div class="form-group">
+            <input type="number" name="numero" id="numero" class="form-control" placeholder="Número de Celular" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="ciudad" id="ciudad" class="form-control" placeholder="Ciudad (Opcional)">
+          </div>
+          <div class="form-group">
+            <select id="operador" name="operador" required class="form-control">
+              <option value="">Operador</option>
+              <option value="movistar">Movistar</option>
+              {{#if peru}}
+              <option value="claro">Claro</option>
+              {{else}}
+              <option value="telcel">Telcel</option>
+              {{/if}}
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Siguiente paso <i class="fa fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,51 @@
+<template name="urls">
+  {{>menu}}
+  <div class="page-header">
+    <h3>URLS disponibles
+      <span class="pull-right small">
+        <a href="{{pathFor 'addurl'}}" class="btn btn-success btn-sm"><i class="fa fa-link"></i> Agregar URL</a>
+      </span>
+    </h3>
+  </div>
+  {{> flashMessages}}
+  <table class="table table-striped table-hovered table-bordered">
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Estado</th>
+        <th># Comentarios disponibles</th>
+        <th colspan="3">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each urls}}
+      <tr>
+        <td>{{url}}</td>
+        <td>
+          {{#if active}}Activo{{else}}Inactivo{{/if}}
+        </td>
+        <td class="text-right">
+          {{num}}
+        </td>
+        <td>
+          {{#if active}}
+          <button class="btn btn-danger btn-sm" title="Desactivar" data-id="{{_id}}"><i class="fa fa-thumbs-o-down"></i></button>
+          {{else}}
+          <button class="btn btn-success btn-sm" title="Activar" data-id="{{_id}}"><i class="fa fa-thumbs-o-up"></i></button>
+          {{/if}}
+        </td>
+        <td>
+          <a class="btn btn-warning btn-sm" title="Ver comentarios" href="{{pathFor 'comments'}}"><i class="fa fa-comments"></i></a>
+        </td>
+        <td>
+          <button class="btn btn-info btn-sm" title="Borrar" data-id="{{_id}}"><i class="fa fa-times"></i></button>
+        </td>
+      </tr>
+      {{else}}
+      <tr>
+        <td colspan="5" class="text-center">No existen URLS</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
