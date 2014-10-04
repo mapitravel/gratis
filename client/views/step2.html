@@ -38,7 +38,8 @@
             <iframe src="http://media.perunoticias.net/iframes/fb.php?url={{url}}"></iframe>
             {{/if}}
             {{#if gp}}
-            <iframe src="http://media.perunoticias.net/iframes/gp.php?url={{url}}" class="iframe2"></iframe>
+            <!--iframe src="http://media.perunoticias.net/iframes/gp.php?url={{url}}" class="iframe2"></iframe-->
+            <iframe src="{{protocol}}//{{domain}}/gp.php?url={{url}}" class="iframe2"></iframe>
             {{/if}}
           </div>
         </div>

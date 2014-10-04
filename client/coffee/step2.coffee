@@ -18,6 +18,17 @@ Template.step2.helpers
   url: ->
     encodeURIComponent (@).url
 
+  domain: ->
+    l = document.createElement 'a'
+    l.href = (@).url
+    l.hostname
+
+  protocol: ->
+    l = document.createElement 'a'
+    l.href = (@).url
+    l.protocol
+
+
 Template.step2.events
   'click .btn-success': (e) ->
     Comments.update (@)._id,
